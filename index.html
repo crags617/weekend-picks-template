@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
   </head>
   
-  <body class="hero"> <!--**changed from "right"-->
+  <body class="hero">
     <div id="branding"></div>
     <div id="content"><div class="limiter">
         <div id="about">
@@ -47,15 +47,12 @@
 
     <!-- Site configuration -->
     <script type="text/javascript">
-    //**write config script down here to set map features?**
+    /**write config script down here to "set map features"?? not sure what to put**/
 
     // Make a new map in #map
     var main = Map('map', {
-      //api: 'http://a.tiles.mapbox.com/v3/examples.map-yr0njcqy.jsonp', 
-      //**for more info about custom API urls see http://mapbox.com/hosting/api/**
-      api: 'http://a.tiles.mapbox.com/v3/crags617.map-rt63jrlc.html#1/0/22.499999999999986',
-      zoomRange: [0, 8], //changed from 0-15 to 0-8
-      //below are additional features...
+      api: 'http://a.tiles.mapbox.com/v3/crags617.map-rt63jrlc.html#1/0/22.499999999999986', /**for more info about custom API urls see http://mapbox.com/hosting/api**/
+      zoomRange: [0, 8], //changed from 0-15 to 0-8.
       features: [
         'zoomwheel', //use scroll wheel on the mouse to zoom
         //'zoombox', --allows uses to zoom to a bounding box with shift key/dragging... didn't think was necessary
