@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="ext/mmg.css" type="text/css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
   </head>
-  <body class="right">
+  
+  <body class="hero"> <!--**changed from "right"-->
     <div id="branding"></div>
     <div id="content"><div class="limiter">
         <div id="about">
@@ -46,25 +47,30 @@
 
     <!-- Site configuration -->
     <script type="text/javascript">
+    //**write config script down here to set map features?**
 
     // Make a new map in #map
     var main = Map('map', {
-      api: 'http://a.tiles.mapbox.com/v3/examples.map-yr0njcqy.jsonp',
-      zoomRange: [0, 15],
+      //api: 'http://a.tiles.mapbox.com/v3/examples.map-yr0njcqy.jsonp', 
+      //**for more info about custom API urls see http://mapbox.com/hosting/api/**
+      api: 'http://a.tiles.mapbox.com/v3/crags617.map-rt63jrlc.html#1/0/22.499999999999986',
+      zoomRange: [0, 8], //changed from 0-15 to 0-8
+      //below are additional features...
       features: [
-        'zoomwheel',
-        'zoombox',
-        'zoompan',
-        'legend',
-        'share',
-        'layerHash'
+        'zoomwheel', //use scroll wheel on the mouse to zoom
+        //'zoombox', --allows uses to zoom to a bounding box with shift key/dragging... didn't think was necessary
+        'zoompan', //displays zoom controls
+        'legend', 
+        'share', 
+        //'layerHash', --adds bookmarkable suffix to url that saves layer selections... didn't think was necessary
+        'tooltips', //added this feature for interaction
+        'bwdetect', //decreases quality of map image based on auto detect of low bandwidth connections.. i like this feature so i added it
       ]
     }, function(tilejson) {
-      document.title = tilejson.name;
+      document.title = tilejson.name; //**see if this works for me, otherwise change title and below stuff**
       $('h1.map-title').text(tilejson.name);
       $('p.description').text(tilejson.description);
     });
-
     </script>
 </body>
 </html>
