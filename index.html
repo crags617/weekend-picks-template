@@ -5,27 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title></title>
+    <title>Earthquake Demo</title>
     <link rel="stylesheet" href="map.css" type="text/css" />
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link rel="stylesheet" href="ext/mmg.css" type="text/css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
   </head>
   
-  <body class="hero">
-    <div id="branding"></div>
+  <body class="left">
+    <!--div id="branding"></div-->
     <div id="content"><div class="limiter">
         <div id="about">
-          <img style='float:left;' src='img/logo_retina.png' width='49' height'39' />
-          <h1 class='map-title'></h1>
+          <h1>Earthquake Demo</h1>
           <p class='description'></p>
-          <div id="markerfilters" class="clearfix section">
-            <div class="markerfilter selected" id="null">All</div>
-          </div>
         </div>
         <div data-control='geocode' class="clearfix section" id="search">
           <form class="geocode">
-            <input placeholder='Search for an address' type="text">
+            <h2>See how close you live to these!</h2>
+            <input placeholder='Your address' type="text">
             <input type='submit' />
             <div id='geocode-error'></div>
           </form>
@@ -47,11 +44,14 @@
 
     <!-- Site configuration -->
     <script type="text/javascript">
-    /**write config script down here to "set map features"?? not sure what to put**/
 
-    // Make a new map in #map
     var main = Map('map', {
       api: 'http://a.tiles.mapbox.com/v3/crags617.map-rt63jrlc.jsonp',
+      center: {
+        lat: 40,
+        lon: -80,
+        zoom: 1         
+      },
       zoomRange: [0, 8], //changed from 0-15 to 0-8.
       features: [
         'zoomwheel', //use scroll wheel on the mouse to zoom
@@ -64,7 +64,7 @@
         'bwdetect', //decreases quality of map image based on auto detect of low bandwidth connections.. i like this feature so i added it
       ]
     }, function(tilejson) {
-      document.title = tilejson.name; //**see if this works for me, otherwise change title and below stuff**
+      document.title = tilejson.name;
       $('h1.map-title').text(tilejson.name);
       $('p.description').text(tilejson.description);
     });
