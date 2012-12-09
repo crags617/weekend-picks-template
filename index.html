@@ -64,9 +64,7 @@
         'bwdetect', //decreases quality of map image based on auto detect of low bandwidth connections.. i like this feature so i added it
       ]
     }, function(tilejson) {
-      document.title = tilejson.name;
-      $('h1.map-title').text(tilejson.name);
-      $('p.description').text(tilejson.description);
+        $('p.description').text(tilejson.description);
     });
     </script>
 </body>
