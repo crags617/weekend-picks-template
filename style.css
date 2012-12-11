@@ -289,6 +289,16 @@ a.zoomer {
   bottom:auto;
   height:400px;
 }
+.hero #header {
+  top:1px;
+  left:0;
+  right:0;
+  bottom:auto;
+  border-left:none;
+  border-right:none;
+  border-top:1px solid #ccc;
+  width:auto;
+}
 .hero #content {
   top:450px;
   left:0;
