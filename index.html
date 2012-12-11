@@ -13,22 +13,25 @@
   </head>
   
   <body class="hero">
-    <header>
-      <h1>Earthquake Demo</h1>
-      <h5>Demo site built with Mapbox's Weekend-Picks-Template and TileMill Map.</h5>'
-    </header>
     <div id="content"><div class="limiter">
-      <div id="about">
-        <p class='description'>Ya ya ya...</p>
-      </div>
-      <div data-control='geocode' class="clearfix section" id="search">
-        <form class="geocode">
-          <h2>Search a location</h2>
-          <input placeholder='Your address' type="text">
-          <input type='submit' />
-          <div id='geocode-error'></div>
-        </form>
-      </div>
+      <table>
+        <td>
+          <div id="about">
+          <h1>Earthquake Demo</h1>
+          <p class='description'></p>
+          </div>
+        </td>
+      	<td>
+          <div data-control='geocode' class="clearfix section" id="search">
+            <form class="geocode">
+              <h2>Search a location</h2>
+              <input placeholder='Your address' type="text">
+              <input type='submit' />
+              <div id='geocode-error'></div>
+            </form>
+          </div>
+      	</td>
+      </table>
     </div>
     <div id="map" class="map"></div>
 
